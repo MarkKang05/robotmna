@@ -8,12 +8,18 @@ require("dotenv").config();
 var app = express();
 
 var todos = require('./routes/todos');
+var users = require('./routes/users');
 
 // view engine setup
 app.engine('handlebars', exphbs({
   defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
+
+app.use((req, res, next) => {
+  res.locals.user = "dd";
+  next();
+});
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')));
@@ -26,5 +32,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/todos', todos);
+app.use('/users', users);
 
 module.exports = app;
