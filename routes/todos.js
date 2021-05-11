@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router()
 
 
-router.get('/', (req, res) => {
-    res.render('todos/index');
+router.get('/', (req, res, next) => {
+    res.render('todos/todo_idx');
 })
 
 router.post('/', (req, res) => {
-    res.redirect('/todos');
-})
+    // res.send(req.body);
+});
+
 module.exports = router;
