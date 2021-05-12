@@ -1,9 +1,27 @@
-<form action="/todos" method="post">
-    <p><input name="title" type="text" placeholder="title input"></p>
-    <p>
-        <textarea name="description" placeholder="description"></textarea>
-    </p>
-    <p>
-        <input type="submit">
-    </p>
-</form>
+<div class="bg-gray-900 w-1/2 rounded px-6">
+    <div class="border-l-4 border-red-400 -ml-6 pl-6 flex items-center justify-between my-4">
+        <div class="font-semibold text-gray-800">Company Highlights</div>
+        <div class="text-red-400">See all</div>
+    </div>
+    {{#each todos}}
+    <hr class="-mx-6"/>
+    <div class="flex items-center justify-between my-4">
+        <div class="w-16">
+        <img class="w-12 h-12 rounded-full" src="https://source.unsplash.com/50x50/?nature">
+        </div>
+        <div class="flex-1 pl-2">
+            <div class="text-gray-700 font-semibold">
+            {{!-- PHP Developers --}}
+                <p>{{title}}</p>
+            </div>
+            <div class="text-gray-600 font-thin">
+                <p>{{details}}</p>
+            </div>
+        </div>
+        <div class="text-red-400">20 Posts</div>
+    </div>
+    {{else}}
+        <p>No todos listed</p>
+    {{/each}}
+    
+</div>
