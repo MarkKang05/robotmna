@@ -17,7 +17,7 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 app.use((req, res, next) => {
-  res.locals.user = "dd";
+  res.locals.user = null;
   next();
 });
 
