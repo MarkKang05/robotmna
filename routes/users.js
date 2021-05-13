@@ -33,6 +33,7 @@ router.post('/login', (req, res, next) => {
 
 router.post('/register', (req, res) => {
     res.send(req.body);
+    // if()
 });
 
 router.get('/logout', (req, res) => {
