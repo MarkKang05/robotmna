@@ -56,7 +56,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-  console.log("index main");
+  // console.log("index main");
   const title = "hello world";
   if (req.user == null){
       res.render('index', {

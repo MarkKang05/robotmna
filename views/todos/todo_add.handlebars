@@ -1,0 +1,71 @@
+<div class="flex justify-center h-screen items-center">
+    <div class='flex max-w-sm w-full justify-center bg-white shadow-md rounded-lg overflow-hidden mx-auto flex flex-col p-5'>
+        <h3 class="text-2xl font-bold mb-4">Add Todo</h3>
+    <form action="/todos/add" method="POST">
+    <!-- This is the input component -->
+    <div class="relative h-10 input-component mb-5 empty">
+      <input
+        id="title"
+        type="text"
+        name="title"
+        class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
+      />
+      <label for="address" class="absolute left-2 transition-all bg-white px-1">
+          Title
+      </label>
+    </div>
+    <div class="relative h-10 input-component mb-5 empty">
+      <input
+        id="description"
+        type="text"
+        name="description"
+        class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
+      />
+      <label for="description" class="absolute left-2 transition-all bg-white px-1">
+          Description
+      </label>
+    </div>
+    <!-- This is the input component -->
+    <div class="relative h-10 input-component mb-5 empty">
+      <input
+        id="dueDate"
+        type="text"
+        name="dueDate"
+        class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
+      />
+      <label for="dueDate" class="absolute left-2 transition-all bg-white px-1">
+          Due Date
+      </label>
+    </div>
+    <div class="inline-block mr-2 mt-2">
+        <button type="submit" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-green-500 hover:bg-green-600 hover:shadow-lg">submit</button>
+        <button type="cancel" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-red-500 hover:bg-red-600 hover:shadow-lg">Cancel</button>
+    </div> 
+    </div>
+    </form>
+</div>
+
+
+<style>
+label {
+  top: 0%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: rgba(37, 99, 235, 1);
+}
+.empty input:not(:focus) + label {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+input:not(:focus) + label {
+  color: rgba(70, 70, 70, 1);
+}
+input {
+  border-width: 1px;
+}
+input:focus {
+  outline: none;
+  border-color: rgba(37, 99, 235, 1);
+}
+</style>
