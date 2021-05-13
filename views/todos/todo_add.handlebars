@@ -9,8 +9,9 @@
         type="text"
         name="title"
         class="h-full w-full border-gray-300 px-2 transition-all border-blue rounded-sm"
+        required
       />
-      <label for="address" class="absolute left-2 transition-all bg-white px-1">
+      <label for="title" class="absolute left-2 transition-all bg-white px-1">
           Title
       </label>
     </div>
@@ -45,7 +46,6 @@
     </form>
 </div>
 
-
 <style>
 label {
   top: 0%;
@@ -69,3 +69,16 @@ input:focus {
   border-color: rgba(37, 99, 235, 1);
 }
 </style>
+<script>
+    const allInputs = document.querySelectorAll('input');
+    for(const input of allInputs) {
+        input.addEventListener('input', () => {
+            const val = input.value
+            if(!val) {
+                input.parentElement.classList.add('empty')
+            } else {
+                input.parentElement.classList.remove('empty')
+            }
+        })
+    }
+</script>
