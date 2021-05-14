@@ -1,7 +1,7 @@
 <div class="flex justify-center h-screen items-center">
     <div class='flex max-w-sm w-full justify-center bg-white shadow-md rounded-lg overflow-hidden mx-auto flex flex-col p-5'>
         <h3 class="text-2xl font-bold mb-4">Add Todo</h3>
-    <form action="/todos/add" method="POST">
+    <form action="/todos" method="POST">
     <!-- This is the input component -->
     <div class="relative h-10 input-component mb-5 empty">
       <input
@@ -51,7 +51,6 @@ label {
   top: 0%;
   transform: translateY(-50%);
   font-size: 11px;
-  color: rgba(37, 99, 235, 1);
 }
 .empty input:not(:focus) + label {
   top: 50%;

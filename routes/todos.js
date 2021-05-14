@@ -19,8 +19,18 @@ router.get('/add', ensureAuthenticated, (req, res) => {
 });
 
 
-router.post('/add', (req, res) => {
-    res.send(req.body);
+router.post('/', ensureAuthenticated, (req, res) => {
+    // res.send(req.body);
+    const newUser = {
+      title: req.body.title,
+      details: req.body.description,
+      user: req.user.id,
+      dueDate: req.body.dueDate
+    };
+    new Todo(newUser).save().then(todo => {
+      res.redirect('/todos');
+    })
+
 });
 
 module.exports = router;

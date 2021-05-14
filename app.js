@@ -7,15 +7,13 @@ const session = require('express-session');
 const MemoryStore = require('memorystore')(session)
 const mongoose = require('mongoose');
 const passport = require('passport');
-const {ensureAuthenticated} = require('./helpers/auth');
-// var session = require('cookie-session');
 const Handlebars = require('handlebars');
+const {ensureAuthenticated} = require('./helpers/auth');
+
 require("dotenv").config();
 
 var todos = require('./routes/todos');
 var users = require('./routes/users');
-const { runInNewContext } = require('vm');
-// const { session } = require('passport');
 
 require('./config/passport')(passport);
 
@@ -46,9 +44,6 @@ app.use(passport.session());
 
 app.use((req, res, next) => {
   res.locals.user = req.user || null;
-  // res.locals.user = { 
-  //    _id: '6091128a0db8e1003a05e3ee', name: 'markkang05', email: 'markkang05@gmail.com', password: '11111'}
-  // res.locals.name = req.user.name || null;
   next();
 });
 
@@ -60,12 +55,14 @@ app.get('/', (req, res) => {
   const title = "hello world";
   if (req.user == null){
       res.render('index', {
-        name: null
+        name: null,
+        home: '/'
     });
   }
   else{
       console.log(res.locals.user)
       res.render('index', {
+        home: '/'
         // name: req.user.name
     });
   }

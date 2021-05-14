@@ -1,10 +1,11 @@
+<div class="flex justify-center">
 <div class="w-full max-w-xs">
   <form action="/users/register" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST">
     <div class="mb-4">  {{!-- username --}}
       <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
         Username
       </label>
-      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="name" id="username" type="text" placeholder="Username">
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="name" id="username" type="text" placeholder="Username" required>
     </div>
     <div class="mb-4">  {{!-- email --}}
       <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
@@ -40,6 +41,7 @@
     &copy;2020 Acme Corp. All rights reserved.
   </p>
 </div>
+</div>
 
 
 <script>
@@ -53,6 +55,7 @@
     if(pw.length < 6){
       window.alert('Password must be 6-letter over');
       btn.disabled = 'disabled';
+            btn.style.backgroundColor = "gray";
       return;
     }
 
@@ -65,6 +68,7 @@
     if(check_SC==0){
       window.alert('Password dont have SCletter');
       btn.disabled = 'disabled';
+            btn.style.backgroundColor = "gray";
     } else{
       btn.disabled = false;
     }
@@ -83,6 +87,7 @@
             document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
             document.getElementById('check').style.color='red';
             btn = document.getElementById('btn');
+            btn.style.backgroundColor = "gray";
             btn.disabled = 'disabled';
         }
     }
