@@ -1,6 +1,11 @@
-<div class="flex justify-center">
-<div class="w-full max-w-xs">
-  <form action="/users/register" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST">
+<div class="flex justify-center mt-16">
+<div class="w-full max-w-md">
+  <form action="/users/register" class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4" method="POST">
+    <div>
+      <p class="text-3xl mb-8 font-semibold">
+        Register
+      </p>
+    </div>
     <div class="mb-4">  {{!-- username --}}
       <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
         Username
@@ -53,7 +58,7 @@
 
     btn = document.getElementById('btn');
     if(pw.length < 6){
-      window.alert('Password must be 6-letter over');
+      window.alert('비밀번호는 6자 이상 입력해주세요.');
       btn.disabled = 'disabled';
             btn.style.backgroundColor = "gray";
       return;
@@ -66,7 +71,7 @@
       }
     }
     if(check_SC==0){
-      window.alert('Password dont have SCletter');
+      window.alert('특수문자를 입력해주세요');
       btn.disabled = 'disabled';
             btn.style.backgroundColor = "gray";
     } else{

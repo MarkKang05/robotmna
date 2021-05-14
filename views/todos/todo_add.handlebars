@@ -1,4 +1,4 @@
-<div class="flex justify-center h-screen items-center">
+<div class="flex justify-center mt-16">
     <div class='flex max-w-sm w-full justify-center bg-white shadow-md rounded-lg overflow-hidden mx-auto flex flex-col p-5'>
         <h3 class="text-2xl font-bold mb-4">Add Todo</h3>
     <form action="/todos" method="POST">
@@ -40,7 +40,7 @@
     </div>
     <div class="inline-block mr-2 mt-2">
         <button type="submit" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-green-500 hover:bg-green-600 hover:shadow-lg">submit</button>
-        <button type="cancel" class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-red-500 hover:bg-red-600 hover:shadow-lg">Cancel</button>
+        <button onclick="location.href='/todos'"class="focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-red-500 hover:bg-red-600 hover:shadow-lg">Cancel</button>
     </div> 
     </div>
     </form>
