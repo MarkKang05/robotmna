@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/mystyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -16,12 +17,45 @@
         }
     </style> 
 </head>
-<body class="bg-gray-500">
-
-    {{> navbar}}
-    
-    <div>
-        {{{body}}}
-    </div>
-
+<body>
+    <header>
+        {{> navbar}}
+    </header>
+    <body class="backimg">
+    {{{body}}}
+    </body>
+</body>
 </html>
+
+<script>
+        window.addEventListener('scroll', function () {
+            let header = document.querySelector('header');
+            let windowPosition = window.scrollY > 0;
+            header.classList.toggle('scrolling-active', windowPosition);
+        })
+
+        function change(tog){
+            let header = document.querySelector('header');
+            if(window.scrollY=== 0){
+                console.log(window.scrollY);
+                header.classList.toggle('scrolling-active', tog);
+            }else{
+                console.log("scroll");
+                console.log(window.scrollY);
+                header.classList.toggle('scrolling-active', 1);
+            }
+        }
+</script>
+
+<style type="text/css">
+    .backimg{
+    width: 100%;
+    height: 130vh;
+    background-image: url("/images/image5.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+</style>
