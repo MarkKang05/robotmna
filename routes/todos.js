@@ -33,4 +33,13 @@ router.post('/', ensureAuthenticated, (req, res) => {
 
 });
 
+router.delete('/:id', ensureAuthenticated, (req,res) => {
+  Todo.remove({
+    _id: req.params.id
+  }).then(() => {
+    req.flash('success_msg', 'Todo removed');
+    res.redirect('/todos');
+  })
+});
+
 module.exports = router;
