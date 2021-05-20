@@ -10,10 +10,12 @@ const passport = require('passport');
 const Handlebars = require('handlebars');
 const {ensureAuthenticated} = require('./helpers/auth');
 
+
 require("dotenv").config();
 
 var todos = require('./routes/todos');
 var users = require('./routes/users');
+var upload = require('./routes/upload');
 
 require('./config/passport')(passport);
 
@@ -22,6 +24,8 @@ mongoose.connect(process.env.DB_ADR).then(() => {
 }).catch(err => {
   console.log("#################### Error ####################");
 });
+// const conn = mongoose.createConnection(process.env.DB_ADR);
+const conn = mongoose.connection;
 
 
 var app = express(); 
@@ -41,6 +45,12 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+// upload image//////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////
+
+
 
 app.use((req, res, next) => {
   res.locals.user = req.user || null;
@@ -70,5 +80,6 @@ app.get('/', (req, res) => {
 
 app.use('/todos', todos);
 app.use('/users', users);
+app.use('/upload', upload);
 
 module.exports = app;
