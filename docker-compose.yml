@@ -6,9 +6,8 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    environment:
-      NODE_ENV: production
     ports:
       - "${PORT}:${PORT}"
     volumes: 
       - .:/usr/src/app
+      - /usr/src/app/node_modules
