@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const Handlebars = require('handlebars');
 const {ensureAuthenticated} = require('./helpers/auth');
+const methodOverride = require('method-override')
 
 
 require("dotenv").config();
@@ -36,6 +37,7 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
+app.use(methodOverride('_method'))
 app.use(session({
 
   secret: 'secret',

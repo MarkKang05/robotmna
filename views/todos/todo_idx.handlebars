@@ -21,7 +21,11 @@
         <div class="text-red-600 mr-5 text-lg">{{dueDate}}</div>
         {{!-- <div class="text-green-400">Hello</div> --}}
         <button class="bg-yellow-300 rounded-lg p-1 mr-2">edit</button>
-        <button class="bg-red-400 rounded-lg p-1 mr-2">delete</button>
+        <form method="POST" action="/todos/{{_id}}?_method=DELETE">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" class="btn btn-danger btn-block" value="Delete">
+        </form>
+            {{!-- <button class="bg-red-400 rounded-lg p-1 mr-2">delete</button> --}}
     </div>
     {{else}}
         <p>No todos listed</p>
