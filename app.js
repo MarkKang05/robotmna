@@ -10,6 +10,7 @@ const passport = require('passport');
 const Handlebars = require('handlebars');
 const {ensureAuthenticated} = require('./helpers/auth');
 const methodOverride = require('method-override')
+const io = require('socket.io')();
 
 
 require("dotenv").config();

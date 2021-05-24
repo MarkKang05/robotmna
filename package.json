@@ -29,6 +29,7 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "postcss-cli": "^8.3.1",
+    "socket.io": "^4.1.2",
     "tailwindcss": "^2.1.2"
   },
   "devDependencies": {
