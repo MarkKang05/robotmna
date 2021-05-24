@@ -11,6 +11,7 @@ const Handlebars = require('handlebars');
 const {ensureAuthenticated} = require('./helpers/auth');
 const methodOverride = require('method-override')
 const io = require('socket.io')();
+var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 
 
 require("dotenv").config();
