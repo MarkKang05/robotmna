@@ -9,6 +9,13 @@ var debug = require('debug')('robotmna:server');
 var http = require('http');
 var fs = require('fs');
 
+const options = {
+  key: fs.readFileSync('./cert/private.key'),
+  cert: fs.readFileSync('./cert/certificate.crt'),
+  ca: fs.readFileSync('./cert/ca_bundle.crt')
+
+}
+
 /**
  * Get port from environment and store in Express.
  */
@@ -20,7 +27,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
