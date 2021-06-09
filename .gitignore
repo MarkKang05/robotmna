@@ -36,7 +36,7 @@ build/Release
 node_modules/
 jspm_packages/
 cert/
-public/stylesheets/tailwind.css
+public/stylesheets/style.css
 
 # Typescript v1 declaration files
 typings/
