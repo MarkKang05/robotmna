@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "start2": "nodemon ./bin/www",
+    "start": "nodemon ./bin/www",
     "buildst1": "npm run build:css && nodemon ./bin/www",
     "build:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css"
   },
